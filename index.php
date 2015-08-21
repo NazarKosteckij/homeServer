@@ -72,7 +72,6 @@ nav .brand-logo {
 <div class="container">
   <div class="home-info ">
      <div class="wether">
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>	
       <div class=" col  s6 m6 l4 offset-m4">
         <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
           <i class="row card-title">Sensors data</i>
