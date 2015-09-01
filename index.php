@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Home Server</title>
+<title>My Home Server</title>
 <script src="js/jquery.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 <script src="js/jquery.canvasjs.min.js"> </script>
