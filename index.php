@@ -25,6 +25,9 @@ function confirmAction(title, message, url){
   };
 
 }
+function clickLightsToogle() {
+  confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-light.php");
+}
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
