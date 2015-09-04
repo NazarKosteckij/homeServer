@@ -76,7 +76,7 @@ nav .brand-logo {
         <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
           <i class="row card-title">Sensors data</i>
           
-          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="">
+          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
           <i id="row">
             <img  class="sensors-icon" src="png\thermometer.png">
           </i>
@@ -94,7 +94,7 @@ nav .brand-logo {
           ?> </span><span id="units">C</span>
           </div>
         </div>
-          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="">
+          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
           <i id="row">
             <img  class="sensors-icon" src="png\Humidity.png">
           </i>
@@ -119,7 +119,7 @@ nav .brand-logo {
         <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
           <i class="row card-title">Core temperature</i>
           
-          <div class="flow-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="">
+          <div class="flow-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature of server's cpu">
           <i id="row">
             <img  class="sensors-icon" src="png\thermometer.png">
           </i>
