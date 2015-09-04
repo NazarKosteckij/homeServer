@@ -9,8 +9,22 @@
     $(document).ready(function(){
       $('.parallax').parallax();
       $('.slider').slider({full_width: true});
+      $('#main-modal').leanModal();
     });
 
+function confirmAction(title, message, url){
+  if (title) {
+
+  };
+
+  if (message && url) {
+      $("#action-url").attr("onclick", "$.ajax('" + url +"'); alert('aSome')");  
+      $('#main-modal').openModal();
+  } else{
+    return;
+  };
+
+}
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
@@ -206,7 +220,7 @@ nav .brand-logo {
  <div class="container">
 <div class="row">
   
- </div>    
+</div>    
 </div>
 </main>
   <footer class="page-footer">
@@ -234,6 +248,17 @@ nav .brand-logo {
             </div>
           </div>
         </footer>
+
+  <!-- Modal Structure -->
+  <div id="main-modal" class="modal">
+    <div class="modal-content">
+      <h4 id="modal-title">Modal Header</h4>
+      <p id="modal-text">A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id='action-url'>Agree</a>
+    </div>
+  </div>
 </body>
 </html>
  
