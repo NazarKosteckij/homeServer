@@ -1,30 +1,15 @@
 <html>
 <head>
-<title>My Home Server</title>
+<title>Home Server</title>
 <script src="js/jquery.js"></script>
 <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-<script src="js/jquery.canvasjs.min.js"> </script>
 <script src="js/materialize.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
       $('.parallax').parallax();
       $('.slider').slider({full_width: true});
-      $('#main-modal').leanModal();
     });
 
-function confirmAction(title, message, url){
-  if (title) {
-
-  };
-
-  if (message && url) {
-      $("#action-url").attr("onclick", "$.ajax('" + url +"'); alert('aSome')");  
-      $('#main-modal').openModal();
-  } else{
-    return;
-  };
-
-}
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
@@ -36,7 +21,7 @@ function confirmAction(title, message, url){
     font-size: 75%;
 }
 .home-info{
-    height: 550px;
+    height: 400px;
     padding-top: 10px;
 }
  .parallax-container {
@@ -75,7 +60,7 @@ nav .brand-logo {
   
   <div class=" parallax-container">
     <div class="parallax">
-      <img src="http://bestinspired.com/wp-content/uploads/2015/05/Modern-House.1.jpg">
+      <img src="img/Modern-House.1.jpg">
     </div>
     <div class="col s10 center">
       <H1 class="center" style="color:white;   font-weight: 100;  font-size: 120px;">
@@ -90,7 +75,7 @@ nav .brand-logo {
         <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
           <i class="row card-title">Sensors data</i>
           
-          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
+          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Температура">
           <i id="row">
             <img  class="sensors-icon" src="png\thermometer.png">
           </i>
@@ -108,7 +93,7 @@ nav .brand-logo {
           ?> </span><span id="units">C</span>
           </div>
         </div>
-          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
+          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Вологість">
           <i id="row">
             <img  class="sensors-icon" src="png\Humidity.png">
           </i>
@@ -125,27 +110,6 @@ nav .brand-logo {
             ?> </span><span id="units">%</span>
           </div>
           </div>
-        </div>
-      </div>
-
-     </div><div class="server-info">
-      <div class=" col  s6 m6 l4 offset-m4">
-        <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
-          <i class="row card-title">Core temperature</i>
-          
-          <div class="flow-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature of server's cpu">
-          <i id="row">
-            <img  class="sensors-icon" src="png\thermometer.png">
-          </i>
-          <div class="row">
-          <span id="value"><?php
-              $json3 = file_get_contents("http://localhost/sensors/getCoreTemperature.php");
-              $data3 = json_decode($json3);
-              $coreTemperature =  $data3->temperature;
-              print  $coreTemperature;
-          ?> </span><span id="units">C</span>
-          </div>
-        </div>
         </div>
       </div>
 
@@ -186,28 +150,28 @@ nav .brand-logo {
         <div class="slider">
     <ul class="slides">
       <li>
-        <img src="http://cdn2.itpro.co.uk/sites/itpro/files/server_room.jpg"> <!-- random image -->
+        <img src="img/server_room.jpg"> <!-- random image -->
         <div class="caption center-align">
           <h3>This is our big DataStorage!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our servers cluster.</h5>
         </div>
       </li>
       <li>
-        <img src="http://blog.samanage.com/wp-content/uploads/2011/02/Cloud-Platter.jpg"> <!-- random image -->
+        <img src="img/Cloud-Platter.jpg"> <!-- random image -->
         <div class="caption left-align">
           <h3>Cloud technologies</h3>
           <h5 class="light grey-text text-lighten-3">Our owncloud</h5>
         </div>
       </li>
       <li>
-        <img src="https://blog.digicert.com/wp-content/uploads/2014/08/shutterstock_140095138.jpg"> <!-- random image -->
+        <img src="img/shutterstock_140095138.jpg"> <!-- random image -->
         <div class="caption right-align">
           <h3>Verry fast home network</h3>
           <h5 class="light grey-text text-lighten-3">All films and other media in verry fast acces</h5>
         </div>
       </li>
       <li>
-        <img src="http://arduino.ua/img/hardware/ArduinoADKFront.jpg"> <!-- random image -->
+        <img src="img/ArduinoADKFront.jpg"> <!-- random image -->
         <div class="caption center-align">
           <h3>Arduino based platform</h3>
           <h5 class="light grey-text text-lighten-3">In the future we will maintenance another avr's</h5>
@@ -220,14 +184,13 @@ nav .brand-logo {
  <div class="container">
 <div class="row">
   
-</div>    
+ </div>    
 </div>
 </main>
   <footer class="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div>
               <div class="col l4 offset-l2 s12">
@@ -248,18 +211,6 @@ nav .brand-logo {
             </div>
           </div>
         </footer>
-
-  <!-- Modal Structure -->
-  <div id="main-modal" class="modal">
-    <div class="modal-content">
-      <h4 id="modal-title">Modal Header</h4>
-      <p id="modal-text">A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id='action-url'>Agree</a>
-    </div>
-  </div>
 </body>
 </html>
  
-
