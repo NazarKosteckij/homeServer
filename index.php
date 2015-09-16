@@ -25,6 +25,10 @@ function confirmAction(title, message, url){
   };
 
 }
+function clickLightsToogle() {
+  confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-light.php");
+   $('#main-modal').closeModal();
+}
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style type="text/css">
@@ -253,10 +257,11 @@ nav .brand-logo {
   <div id="main-modal" class="modal">
     <div class="modal-content">
       <h4 id="modal-title">Modal Header</h4>
-      <p id="modal-text">A bunch of text</p>
+      <p id="modal-text">Text</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id='action-url'>Agree</a>
+      <a href="#!" class=" modal-action waves-effect waves-green btn-flat" id='action-url'>Agree</a>
+      <a  class=" modal-action modal-close waves-effect waves-green btn-flat" >Close</a>
     </div>
   </div>
 </body>
