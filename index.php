@@ -79,7 +79,7 @@ nav .brand-logo {
   
   <div class=" parallax-container">
     <div class="parallax">
-      <img src="http://bestinspired.com/wp-content/uploads/2015/05/Modern-House.1.jpg">
+      <img src="img/Modern-House.1.jpg">
     </div>
     <div class="col s10 center">
       <H1 class="center" style="color:white;   font-weight: 100;  font-size: 120px;">
@@ -190,28 +190,28 @@ nav .brand-logo {
         <div class="slider">
     <ul class="slides">
       <li>
-        <img src="http://cdn2.itpro.co.uk/sites/itpro/files/server_room.jpg"> <!-- random image -->
+         <img src="img/server_room.jpg">
         <div class="caption center-align">
           <h3>This is our big DataStorage!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our servers cluster.</h5>
         </div>
       </li>
       <li>
-        <img src="http://blog.samanage.com/wp-content/uploads/2011/02/Cloud-Platter.jpg"> <!-- random image -->
-        <div class="caption left-align">
+          <img src="img/Cloud-Platter.jpg">
+          <div class="caption left-align">
           <h3>Cloud technologies</h3>
           <h5 class="light grey-text text-lighten-3">Our owncloud</h5>
         </div>
       </li>
       <li>
-        <img src="https://blog.digicert.com/wp-content/uploads/2014/08/shutterstock_140095138.jpg"> <!-- random image -->
+        <img src="img/shutterstock_140095138.jpg">
         <div class="caption right-align">
           <h3>Verry fast home network</h3>
           <h5 class="light grey-text text-lighten-3">All films and other media in verry fast acces</h5>
         </div>
       </li>
       <li>
-        <img src="http://arduino.ua/img/hardware/ArduinoADKFront.jpg"> <!-- random image -->
+        <img src="img/ArduinoADKFront.jpg">
         <div class="caption center-align">
           <h3>Arduino based platform</h3>
           <h5 class="light grey-text text-lighten-3">In the future we will maintenance another avr's</h5>
