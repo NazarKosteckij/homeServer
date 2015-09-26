@@ -11,7 +11,7 @@ namespace service;
 
  class InsideSensorsService implements Sensors
 {
-    function getTemperature(){
+   public function getTemperature(){
         $json = file_get_contents("http://192.168.1.100/sensors/temperature");
         $data = json_decode($json);
         $temperature =  $data->data;
@@ -21,7 +21,7 @@ namespace service;
         return $temperature;
     }
 
-    function getHumidity()
+    public function getHumidity()
     {
         $json = file_get_contents("http://192.168.1.100/sensors/humidity");
         $data = json_decode($json);

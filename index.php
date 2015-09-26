@@ -63,7 +63,9 @@ nav .brand-logo {
 </style>
 </head>
 <?php
-    $inside = new \service\InsideSensorsService();
+include "service/Sensors.php";
+include "service/InsideSensorsService.php";
+    $inside = new service/InsideSensorsService();
 ?>
 <body>
   
@@ -103,7 +105,7 @@ nav .brand-logo {
           </i>
           <div class="row">
           <span id="value"><?php
-                print  $inside.getTemperature();
+                print  $inside->getTemperature();
           ?> </span><span id="units">C</span>
           </div>
         </div>
@@ -113,7 +115,7 @@ nav .brand-logo {
           </i>
           <div class="row">
           <span id="value"><?php
-              print  $inside.getHumidity();
+              print  $inside->getHumidity();
             ?> </span><span id="units">%</span>
           </div>
           </div>
