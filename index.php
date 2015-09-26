@@ -63,9 +63,9 @@ nav .brand-logo {
 </style>
 </head>
 <?php
-include "service/Sensors.php";
-include "service/InsideSensorsService.php";
-    $inside = new service/InsideSensorsService();
+include "services/Sensors.php";
+include "services/InsideSensorsService.php";
+    $inside = new  InsideSensorsService();
 ?>
 <body>
   

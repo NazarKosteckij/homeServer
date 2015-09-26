@@ -6,9 +6,6 @@
  * Time: 10:26
  */
 
-namespace service;
-
-
  class InsideSensorsService implements Sensors
 {
    public function getTemperature(){

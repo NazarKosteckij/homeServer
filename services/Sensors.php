@@ -6,8 +6,6 @@
  * Time: 10:37
  */
 
-namespace service;
-
 
 interface Sensors
 {
