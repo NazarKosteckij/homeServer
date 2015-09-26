@@ -62,6 +62,9 @@ nav .brand-logo {
 }
 </style>
 </head>
+<?php
+    $inside = new \service\InsideSensorsService();
+?>
 <body>
   
   <nav>
@@ -100,15 +103,7 @@ nav .brand-logo {
           </i>
           <div class="row">
           <span id="value"><?php
-              $json = file_get_contents("http://192.168.1.100/sensors/temperature");
-              $data = json_decode($json);
-              $temperature =  $data->data;
-              if (is_null($temperature)) {
-                $temperature = "NaN";
-              } else{
-                print  $temperature;
-              
-              }
+                print  $inside.getTemperature();
           ?> </span><span id="units">C</span>
           </div>
         </div>
@@ -118,14 +113,7 @@ nav .brand-logo {
           </i>
           <div class="row">
           <span id="value"><?php
-                $json = file_get_contents("http://192.168.1.100/sensors/humidity");
-                $data = json_decode($json);
-                $humidity =  $data->data;
-                if (is_null($humidity)) {
-                  $humidity = "NaN";
-                } else{
-                  print  $humidity;
-                }
+              print  $inside.getHumidity();
             ?> </span><span id="units">%</span>
           </div>
           </div>
