@@ -146,7 +146,7 @@ include "services/InsideSensorsService.php";
 
               <div class="flow-text tooltipped" id="brightens" data-position="bottom" data-delay="50" data-tooltip="temperature of server's cpu">
                   <p class="range-field">
-                      <input onblur="$.ajax('api/control/toogle-led-light.php?brightness='+this.value)" type="range" id="test5" min="0" max="255" />
+                      <input onchange="$.ajax('api/control/toogle-led-light.php?brightness='+this.value)" type="range" id="test5" min="0" max="255" />
                   </p>
               </div>
           </div>
