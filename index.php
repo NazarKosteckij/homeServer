@@ -184,7 +184,7 @@ include "services/InsideSensorsService.php";
 </div>
 </div>
 
-    <div class="parallax-container">
+    <div class="parallax-container hide">
       <div >
         <div class="slider">
     <ul class="slides">
