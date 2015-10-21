@@ -31,41 +31,14 @@ function clickLightsToogle() {
 }
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style type="text/css">
-.sensors-data #value{
-  font-weight: bolder;
-    color: #4527a0;
-}
-.sensors-data #units{
-    font-size: 75%;
-}
-.home-info{
-    height: 550px;
-    padding-top: 10px;
-}
- .parallax-container {
-      height: 450px;
-    }
-input[type=checkbox]:checked+.lever {
-  background-color: red;
-}
-footer.page-footer{
-
-    background-color: #4527A0;
-}
-nav .brand-logo {
-    margin-left: 30px;
-}
-.sensors-icon{
-  height:36px;
-   margin-bottom:15px;
-}
-</style>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <?php
 include "services/Sensors.php";
 include "services/InsideSensorsService.php";
+include "services/OutsideSensorsService.php";
     $inside = new  InsideSensorsService();
+    $outside = new OutsideSensorsService();
 ?>
 <body>
   
@@ -98,27 +71,52 @@ include "services/InsideSensorsService.php";
       <div class=" col  s6 m6 l4 offset-m4">
         <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
           <i class="row card-title">Sensors data</i>
-          
-          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
-          <i id="row">
-            <img  class="sensors-icon" src="png\thermometer.png">
-          </i>
-          <div class="row">
-          <span id="value"><?php
-                print  $inside->getTemperature();
-          ?> </span><span id="units">C</span>
-          </div>
-        </div>
-          <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
-          <i id="row">
-            <img  class="sensors-icon" src="png\Humidity.png">
-          </i>
-          <div class="row">
+            <div class="col s6">
+                <i class="row card-title">inside</i>
+                <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
+                    <i id="row">
+                        <img  class="sensors-icon" src="png\thermometer.png">
+                    </i>
+                    <div class="row">
+              <span id="value"><?php
+                  print  $inside->getTemperature();
+                  ?> </span><span id="units">C</span>
+                    </div>
+                </div>
+                <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
+                    <i id="row">
+                        <img  class="sensors-icon" src="png\Humidity.png">
+                    </i>
+                    <div class="row">
           <span id="value"><?php
               print  $inside->getHumidity();
-            ?> </span><span id="units">%</span>
-          </div>
-          </div>
+              ?> </span><span id="units">%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <i class="row card-title">outside</i>
+                <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
+                    <i id="row">
+                        <img  class="sensors-icon" src="png\thermometer.png">
+                    </i>
+                    <div class="row">
+                        <span id="value">
+                            <?php print  $outside->getTemperature(); ?>
+                        </span><span id="units">C</span>
+                    </div>
+                </div>
+                <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
+                    <i id="row">
+                        <img  class="sensors-icon" src="png\Humidity.png">
+                    </i>
+                    <div class="row">
+                        <span id="value">
+                            <?php print  $outside->getHumidity(); ?>
+                        </span><span id="units">%</span>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
 
