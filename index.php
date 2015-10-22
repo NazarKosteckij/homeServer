@@ -153,7 +153,7 @@ include "services/OutsideSensorsService.php";
      </div>
       <div class=" col s12 m5">
         <div class="sensors-data row   card-panel center grey lighten-5 z-depth-1 center">
-           <i class="row card-title">Computers controll</i>
+           <i class="row card-title">Computers controll </i>
          
            <!-- Switch -->
             <div class="col  s6 switch center">
@@ -175,6 +175,26 @@ include "services/OutsideSensorsService.php";
                 <span class="lever"></span>
                 On
               </label>
+            </div>
+            <div class="col  s6 switch center">
+                Light
+                <br>
+                <label>
+                    Off
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                    On
+                </label>
+            </div>
+            <div class="col  s6 switch center">
+                LED
+                <br>
+                <label>
+                    Off
+                    <input type="checkbox" checked>
+                    <span class="lever"></span>
+                    On
+                </label>
             </div>
         </div>
        </div>
