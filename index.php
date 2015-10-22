@@ -9,7 +9,6 @@
     $(document).ready(function(){
       $('.parallax').parallax();
       $('.slider').slider({full_width: true});
-      $('#main-modal').leanModal();
     });
 
 function confirmAction(title, message, url){
