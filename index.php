@@ -13,7 +13,7 @@
 
 function confirmAction(title, message, url){
   if (title) {
-    $("#modal-title").val(title)
+    $("#modal-title").html(title);
   };
 
   if (message && url) {
@@ -22,7 +22,7 @@ function confirmAction(title, message, url){
           $('#main-modal').closeModal();
       });
 
-      $("#modal-title").val(message)
+      $("#modal-title").html(message);
       $('#main-modal').openModal();
   } else{
     return;
