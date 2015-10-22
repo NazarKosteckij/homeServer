@@ -54,7 +54,18 @@ include "services/OutsideSensorsService.php";
     </div>
   </nav>
 <main>
-  
+    <!-- Modal Structure -->
+    <div id="main-modal" class="modal">
+        <div class="modal-content">
+            <h4 id="modal-title">Modal Header</h4>
+            <p id="modal-text">Text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action waves-effect waves-green btn-flat" id='action-url'>Agree</a>
+            <a  class=" modal-action modal-close waves-effect waves-green btn-flat" >Close</a>
+        </div>
+    </div>
+
   <div class=" parallax-container">
     <div class="parallax">
       <img src="img/Modern-House.1.jpg">
@@ -250,17 +261,8 @@ include "services/OutsideSensorsService.php";
           </div>
         </footer>
 
-  <!-- Modal Structure -->
-  <div id="main-modal" class="modal">
-    <div class="modal-content">
-      <h4 id="modal-title">Modal Header</h4>
-      <p id="modal-text">Text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action waves-effect waves-green btn-flat" id='action-url'>Agree</a>
-      <a  class=" modal-action modal-close waves-effect waves-green btn-flat" >Close</a>
-    </div>
-  </div>
+
+
 </body>
 </html>
  
