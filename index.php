@@ -13,21 +13,29 @@
 
 function confirmAction(title, message, url){
   if (title) {
-
+    $("#modal-title").val(title)
   };
 
   if (message && url) {
-      $("#action-url").attr("onclick", "$.ajax('" + url +"'); alert('aSome')");  
+      $("#action-url").click(function(url){
+          $.ajax(url);
+          $('#main-modal').closeModal();
+      });
+
+      $("#modal-title").val(message)
       $('#main-modal').openModal();
   } else{
     return;
   };
 
 }
-function clickLightsToogle() {
-  confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-light.php");
-   $('#main-modal').closeModal();
-}
+    function clickLightsToogle() {
+        confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-light.php");
+    }
+
+    function clickLedLightToogle() {
+        confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-led-light.php");
+    }
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -154,7 +162,7 @@ include "services/OutsideSensorsService.php";
 
               <div class="flow-text tooltipped" id="brightens" data-position="bottom" data-delay="50" data-tooltip="temperature of server's cpu">
                   <p class="range-field">
-                      <input onchange="$.ajax('api/control/toogle-led-light.php?brightness='+this.value)" type="range" id="test5" min="0" max="255" />
+                      <input  type="range" id="test5" min="0" max="255" />
                   </p>
               </div>
           </div>
