@@ -185,9 +185,9 @@ $outside = new OutsideSensorsService();
                     <div class="col s6 switch center">
                         LED
                         <br>
-                        <label onchange="requestLed()">
+                        <label >
                             Off
-                            <input type="checkbox" checked>
+                            <input onchange="requestLed()" type="checkbox" checked>
                             <span class="lever"></span>
                             On
                         </label>

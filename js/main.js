@@ -6,7 +6,7 @@ $(document).ready(function(){
     $('.slider').slider({full_width: true});
 });
 
-$('#home-pc-status').change(function(){
+$('#home-pc-status').click(function(){
     clickHomePcToogle();
 });
 
