@@ -5,42 +5,8 @@
     <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
     <script src="js/jquery.canvasjs.min.js"> </script>
     <script src="js/materialize.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.parallax').parallax();
-            $('.slider').slider({full_width: true});
-        });
+    <script src="js/main.js">
 
-        function requestLed(){
-            $.ajax("/api/control/toogle-led-light.php");
-        }
-
-        function confirmAction(title, message, url){
-            if (title) {
-                $("#modal-title").val(title)
-            };
-
-            if (message && url) {
-                $("#action-url").click(function(url){
-                    $.ajax(url);
-                    $('#main-modal').closeModal();
-                });
-
-                $("#modal-title").val(message)
-                $('#main-modal').openModal();
-            } else{
-                return;
-            };
-
-        }
-
-        function clickLightsToogle() {
-            confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-light.php");
-        }
-
-        function clickLedLightToogle() {
-            confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-led-light.php");
-        }
     </script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
