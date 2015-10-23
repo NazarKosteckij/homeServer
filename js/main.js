@@ -7,16 +7,16 @@ $(document).ready(function(){
 });
 
 $('#home-pc-status').change(function(){
-    confirmAction("Confirm your action", "Are you realy want to switch power of Home PC?", "/api/control/toogle-home-pc.php");
+    clickHomePcToogle();
 });
 
 function requestLed(){
-    $.ajax("/api/control/toogle-led-light.php");
+    clickLedLightToogle();
 }
 
 function confirmAction(title, message, url){
     if (title) {
-        $("#modal-title").val(title)
+        $("#modal-title").html(title)
     };
 
     if (message && url) {
@@ -24,8 +24,7 @@ function confirmAction(title, message, url){
             $.ajax(url);
             $('#main-modal').closeModal();
         });
-
-        $("#modal-title").val(message)
+        $("#modal-text").html(message)
         $('#main-modal').openModal();
     } else{
         return;
@@ -35,6 +34,10 @@ function confirmAction(title, message, url){
 
 function clickLightsToogle() {
     confirmAction("Confirm your action", "Are you realy want to switch light?", "/api/control/toogle-light.php");
+}
+
+function clickHomePcToogle() {
+    confirmAction("Confirm your action", "Are you realy want to switch power of Home PC?", "/api/control/toogle-home-pc.php");
 }
 
 function clickLedLightToogle() {
