@@ -4,10 +4,10 @@
 $(document).ready(function(){
     $('.parallax').parallax();
     $('.slider').slider({full_width: true});
-});
 
-$('#home-pc-status').click(function(){
-    clickHomePcToogle();
+    $('#home-pc-status').change(function(){
+        clickHomePcToogle();
+    });
 });
 
 function requestLed(){
