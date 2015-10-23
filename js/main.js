@@ -20,7 +20,7 @@ function confirmAction(title, message, url){
     };
 
     if (message && url) {
-        $("#action-url").click(function(url){
+        $("#action-url").click(function(){
             $.ajax(url);
             $('#main-modal').closeModal();
         });
