@@ -5,9 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
     <script src="js/jquery.canvasjs.min.js"> </script>
     <script src="js/materialize.min.js"></script>
-    <script src="js/main.js">
-
-    </script>
+    <script src="js/main.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
@@ -150,7 +148,7 @@ $outside = new OutsideSensorsService();
                         <br>
                         <label>
                             Off
-                            <input type="checkbox">
+                            <input type="checkbox" id="home-pc-status">
                             <span class="lever"></span>
                             On
                         </label>

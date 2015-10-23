@@ -6,6 +6,10 @@ $(document).ready(function(){
     $('.slider').slider({full_width: true});
 });
 
+$('#home-pc-status').change(function(){
+    confirmAction("Confirm your action", "Are you realy want to switch power of Home PC?", "/api/control/toogle-home-pc.php");
+});
+
 function requestLed(){
     $.ajax("/api/control/toogle-led-light.php");
 }
