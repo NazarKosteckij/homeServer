@@ -4,7 +4,7 @@
 $(document).ready(function(){
     $('.parallax').parallax();
     $('.slider').slider({full_width: true});
-
+    checkStatuses();
     $('#home-pc-status').change(function(){
         clickHomePcToogle();
     });
@@ -14,6 +14,12 @@ function checkStatuses() {
     $.ajax("api/status/led-light.php").done(function( data ) {
         if ( data ) {
             $('#led-light-status').prop("checked", data.data);
+        }
+    });
+
+    $.ajax("api/status/home-pc.php").done(function( data ) {
+        if ( data ) {
+            $('#home-pc-status').prop("checked", data.data);
         }
     });
 }
