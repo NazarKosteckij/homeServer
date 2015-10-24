@@ -187,7 +187,7 @@ $outside = new OutsideSensorsService();
                         <br>
                         <label >
                             Off
-                            <input onchange="requestLed()" type="checkbox" checked>
+                            <input onchange="requestLed()" id="led-light-status" type="checkbox" checked>
                             <span class="lever"></span>
                             On
                         </label>

@@ -10,6 +10,14 @@ $(document).ready(function(){
     });
 });
 
+function checkStatuses() {
+    $.ajax("api/status/led-light.php").done(function( data ) {
+        if ( data ) {
+            $('#led-light-status').prop("checked", data.data);
+        }
+    });
+}
+
 function requestLed(){
     clickLedLightToogle();
 }
