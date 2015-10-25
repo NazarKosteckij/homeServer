@@ -158,7 +158,7 @@ $outside = new OutsideSensorsService();
                         <br>
                         <label>
                             Off
-                            <input type="checkbox" checked>
+                            <input type="checkbox" checked id="server-status">
                             <span class="lever"></span>
                             On
                         </label>

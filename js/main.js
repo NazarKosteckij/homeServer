@@ -22,6 +22,13 @@ function checkStatuses() {
             $('#home-pc-status').prop("checked", data.data);
         }
     });
+
+
+    $.ajax("api/status/server.php").done(function( data ) {
+        if ( data ) {
+            $('#server-status').prop("checked", data.data);
+        }
+    });
 }
 
 function requestLed(){
