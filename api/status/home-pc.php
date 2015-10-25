@@ -6,7 +6,7 @@
  * Time: 1:56
  */
 
-$json = file_get_contents("http://192.168.1.100/status/home-pc");
+$json = file_get_contents("http://192.168.1.100/status/Home-PC");
 header('Content-type: application/json');
 echo $json;
 ?>
