@@ -52,9 +52,9 @@
                 <div class=" col  s6 m6 l4 offset-m4">
                     <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
                         <i class="row card-title">Sensors data</i>
-                        <div class="col s6">
+                        <div class="inside col s6">
                             <i class="row card-title">inside</i>
-                            <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
+                            <div class="temperature flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
                                 <i id="row">
                                     <img  class="sensors-icon" src="png\thermometer.png">
                                 </i>
@@ -63,7 +63,7 @@
 				  </span><span id="units">C</span>
                                 </div>
                             </div>
-                            <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
+                            <div class="humidity flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
                                 <i id="row">
                                     <img  class="sensors-icon" src="png\Humidity.png">
                                 </i>
@@ -73,26 +73,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="outside col s6">
                             <i class="row card-title">outside</i>
-                            <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
+                            <div class="temperature flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature">
                                 <i id="row">
                                     <img  class="sensors-icon" src="png\thermometer.png">
                                 </i>
                                 <div class="row">
-                        <span id="value">
+                		 <span id="value">
                             
-                        </span><span id="units">C</span>
+                        	</span><span id="units">C</span>
                                 </div>
                             </div>
-                            <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
+                            <div class="humidity flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
                                 <i id="row">
                                     <img  class="sensors-icon" src="png\Humidity.png">
                                 </i>
                                 <div class="row">
-                        <span id="value">
+                        		<span id="value">
                             
-                        </span><span id="units">%</span>
+                        		</span><span id="units">%</span>
                                 </div>
                             </div>
                         </div>
