@@ -1,7 +1,8 @@
 /**
- * Created by Õ‡Á‡ on 24.10.2015.
+ * Created by √ç√†√ß√†√∞ on 24.10.2015.
  */
 $(document).ready(function(){
+    getSensorsData();
     $('.parallax').parallax();
     $('.slider').slider({full_width: true});
     checkStatuses();
@@ -9,6 +10,38 @@ $(document).ready(function(){
         clickHomePcToogle();
     });
 });
+
+/** 
+ * Gets the data via api
+ */ 
+function getSensorsData() {
+    //outside
+     $.ajax("api/sensors/outside/temperature.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .outside .temperature #value').html(data.data);
+        }
+    });
+    
+     $.ajax("api/sensors/outside/humidity.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .outside .humidity #value').html(data.data);
+        }
+    });
+    
+    //inside
+     $.ajax("api/sensors/outside/temperature.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .inside .temperature #value').html(data.data);
+        }
+    });
+    
+     $.ajax("api/sensors/outside/humidity.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .inside .humidity #value').html(data.data);
+        }
+    });
+    
+}
 
 function checkStatuses() {
     $.ajax("api/status/led-light.php").done(function( data ) {

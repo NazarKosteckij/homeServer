@@ -1,11 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Íàçàð
+ * User: ÃÃ Ã§Ã Ã°
  * Date: 16.10.2015
  * Time: 19:59
  */
 namespace sensors;
 $outside = new InsideSensorsService();
-echo $outside->getHumidity();
+echo"{\"data\": \"$outside->getHumidity()\"}";
 ?>
