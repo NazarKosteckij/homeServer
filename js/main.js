@@ -48,7 +48,7 @@ function checkStatuses() {
         url:"api/status/led-light.php",
         success: function(data){
             console.log(data.data);
-            if ( data.data === true ) {
+            if ( data.data === 'true' ) {
 
                 $('#led-light-status').prop("checked", true);
             } else {
@@ -61,7 +61,7 @@ function checkStatuses() {
     $.ajax({
         url:"api/status/home-pc.php",
         success: function(data){
-            if ( data.data === true ) {
+            if ( data.data === 'true' ) {
                 console.log(data.data);
                 $('#home-pc-status').prop("checked", true);
             } else {
@@ -71,12 +71,15 @@ function checkStatuses() {
         }
     });
 
+
     $.ajax({
         url:"api/status/server.php",
         success: function(data){
-            if ( data ) {
+            if (  data.data === 'true' ) {
                 console.log(data.data);
-                $('#server-status').prop("checked", data.data);
+                $('#server-status').prop("checked", true);
+            } else {
+                $('#server-status').prop("checked", false);
             }
         }
     }).done(function(){
