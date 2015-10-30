@@ -5,9 +5,13 @@
  * Date: 16.10.2015
  * Time: 19:59
  */
-namespace sensors;
-$outside = new InsideSensorsService();
+
+header('Content-Type:application/json');
+include '../../../services/InsideSensorsService.php';
+
+$inside = new InsideSensorsService();
+
 print "{\"data\": \"";
-print $outside->getHumidity();
+print $inside->getHumidity();
 print "\"}";
 ?>
