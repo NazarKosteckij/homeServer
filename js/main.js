@@ -71,6 +71,7 @@ function checkStatuses() {
         }
     });
 
+
     $.ajax({
         url:"api/status/server.php",
         success: function(data){
