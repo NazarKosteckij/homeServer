@@ -7,5 +7,5 @@
  */
 include "../../../services/InsideSensorsService.php";
 $outside = new InsideSensorsService();
-echo"{"data": "$outside->getHumidity()"} ;
+echo"{\"data\": \"$outside->getHumidity()\"}";
 ?>
