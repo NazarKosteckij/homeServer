@@ -44,24 +44,41 @@ function getSensorsData() {
 }
 
 function checkStatuses() {
-    $.ajax("api/status/led-light.php").done(function( data ) {
-        if ( data ) {
-            $('#led-light-status').prop("checked", data.data);
+    $.ajax({
+        url:"api/status/led-light.php",
+        success: function(data){
+            if ( data ) {
+                console.log(data.data);
+                $('#led-light-status').prop("checked", data.data);
+            }
         }
     });
 
-    $.ajax("api/status/home-pc.php").done(function( data ) {
-        if ( data ) {
-            $('#home-pc-status').prop("checked", data.data);
+    $.ajax({
+        url:"api/status/home-pc.php",
+        success: function(data){
+            if ( data ) {
+                console.log(data.data);
+                $('#home-pc-status').prop("checked", data.data);
+            }
         }
     });
 
-
-    $.ajax("api/status/server.php").done(function( data ) {
-        if ( data ) {
-            $('#server-status').prop("checked", data.data);
+    $.ajax({
+        url:"api/status/server.php",
+        success: function(data){
+            if ( data ) {
+                console.log(data.data);
+                $('#server-status').prop("checked", data.data);
+            }
         }
+    }).done(function(){
+        removePreloader();
     });
+}
+//TODO implement it
+function removePreloader(){
+
 }
 
 function requestLed(){
