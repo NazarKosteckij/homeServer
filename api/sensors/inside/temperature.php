@@ -10,7 +10,6 @@ header('Content-Type:application/json');
 include '../../../services/InsideSensorsService.php';
 
 $inside = new InsideSensorsService();
-
 $temperature = $inside->getTemperature();
 
 print "{\"data\": \"";

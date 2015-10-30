@@ -7,8 +7,9 @@
  */
 
 header('Content-Type:application/json');
-$outside = new OutsideSensorsService();
+include '../../../services/OutsideSensorsService.php';
 
+$outside = new OutsideSensorsService();
 $humidity =  $outside->getHumidity();
 
 print "{\"data\": \"";
