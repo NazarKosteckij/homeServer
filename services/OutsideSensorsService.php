@@ -5,7 +5,7 @@
  * Date: 26.09.2015
  * Time: 10:26
  */
-
+include("Sensors.php");
  class OutsideSensorsService implements Sensors
 {
    public function getTemperature(){
