@@ -7,5 +7,7 @@
  */
 namespace sensors;
 $outside = new InsideSensorsService();
-echo"{\"data\": \"$outside->getHumidity()\"}";
+print "{\"data\": \"";
+print $outside->getHumidity();
+print "\"}";
 ?>
