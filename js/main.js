@@ -1,5 +1,5 @@
 /**
- * Created by Íàçàð on 24.10.2015.
+ * Created by Nazar on 24.10.2015.
  */
 $(document).ready(function(){
     getSensorsData();
@@ -29,13 +29,13 @@ function getSensorsData() {
     });
     
     //inside
-     $.ajax("api/sensors/outside/temperature.php").done(function(data) {
+     $.ajax("api/sensors/inside/temperature.php").done(function(data) {
         if ( data ) {
             $('.sensors-data .inside .temperature #value').html(data.data);
         }
     });
     
-     $.ajax("api/sensors/outside/humidity.php").done(function(data) {
+     $.ajax("api/sensors/inside/humidity.php").done(function(data) {
         if ( data ) {
             $('.sensors-data .inside .humidity #value').html(data.data);
         }
