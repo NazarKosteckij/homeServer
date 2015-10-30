@@ -9,13 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
-<?php
-include "services/Sensors.php";
-include "services/InsideSensorsService.php";
-include "services/OutsideSensorsService.php";
-$inside = new  InsideSensorsService();
-$outside = new OutsideSensorsService();
-?>
+
 <body>
 
 <nav>
@@ -65,9 +59,8 @@ $outside = new OutsideSensorsService();
                                     <img  class="sensors-icon" src="png\thermometer.png">
                                 </i>
                                 <div class="row">
-              <span id="value"><?php
-                  print  $inside->getTemperature();
-                  ?> </span><span id="units">C</span>
+        		      	  <span id="value">
+				  </span><span id="units">C</span>
                                 </div>
                             </div>
                             <div class="flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
@@ -75,9 +68,8 @@ $outside = new OutsideSensorsService();
                                     <img  class="sensors-icon" src="png\Humidity.png">
                                 </i>
                                 <div class="row">
-          <span id="value"><?php
-              print  $inside->getHumidity();
-              ?> </span><span id="units">%</span>
+			         <span id="value">
+				 </span><span id="units">%</span>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +81,7 @@ $outside = new OutsideSensorsService();
                                 </i>
                                 <div class="row">
                         <span id="value">
-                            <?php print  $outside->getTemperature(); ?>
+                            
                         </span><span id="units">C</span>
                                 </div>
                             </div>
@@ -99,7 +91,7 @@ $outside = new OutsideSensorsService();
                                 </i>
                                 <div class="row">
                         <span id="value">
-                            <?php print  $outside->getHumidity(); ?>
+                            
                         </span><span id="units">%</span>
                                 </div>
                             </div>
