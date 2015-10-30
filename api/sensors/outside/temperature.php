@@ -7,5 +7,8 @@
  */
 namespace sensors;
 $outside = new OutsideSensorsService();
-echo $outside->getTemperature();
+$temperature = $outside->getTemperature();
+print "{\"data\": \"";
+print $temperature;
+print "\"}";
 ?>

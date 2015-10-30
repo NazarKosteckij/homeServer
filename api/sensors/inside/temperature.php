@@ -11,6 +11,7 @@ $temperature =  $data->data;
 if (is_null($temperature)) {
     $temperature = "NaN";
 }
-echo $temperature;
-
+print "{\"data\": \"";
+print $temperature;
+print "\"}";
 ?>

@@ -11,5 +11,9 @@ $humidity =  $data->data;
 if (is_null($humidity)) {
     $humidity = "NaN";
 }
-echo $humidity;
+
+print "{\"data\": \"";
+print $humidity;
+print "\"}";
+
 ?>
