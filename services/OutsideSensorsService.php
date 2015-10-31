@@ -8,14 +8,17 @@
 include("Sensors.php");
  class OutsideSensorsService implements Sensors
 {
-   public function getTemperature(){
-       $ch = curl_init("http://192.168.1.100/sensors/outside/temperature");
+   private function doRequestToArduino($url){
+       $ch = curl_init($url);
        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
        curl_setopt($ch, CURLOPT_HEADER, 0);
        $json = curl_exec($ch);
        curl_close($ch);
+       return $json;
+   }
+   public function getTemperature(){
 
-        //$json = file_get_contents("http://192.168.1.100/sensors/outside/temperature");
+        $json = doRequestToArduino("http://192.168.1.100/sensors/outside/temperature");
         $data = json_decode($json);
         $temperature =  $data->data;
         if (is_null($temperature)) {
@@ -26,7 +29,7 @@ include("Sensors.php");
 
     public function getHumidity()
     {
-        $json = file_get_contents("http://192.168.1.100/sensors/outside/humidity");
+        $json = doRequestToArduino("http://192.168.1.100/sensors/outside/humidity");
         $data = json_decode($json);
         $humidity =  $data->data;
         if (is_null($humidity)) {
