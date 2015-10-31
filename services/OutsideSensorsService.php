@@ -7,15 +7,15 @@
  */
 include("Sensors.php");
  class OutsideSensorsService implements Sensors
-{
-   private function doRequestToArduino($url){
-       $ch = curl_init($url);
-       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-       curl_setopt($ch, CURLOPT_HEADER, 0);
-       $json = curl_exec($ch);
-       curl_close($ch);
-       return $json;
-   }
+ {
+     private function doRequestToArduino($url){
+         $ch = curl_init($url);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+         curl_setopt($ch, CURLOPT_HEADER, 0);
+         $json = curl_exec($ch);
+         curl_close($ch);
+         return $json;
+     }
    public function getTemperature(){
 
         $json = $this->doRequestToArduino("http://192.168.1.100/sensors/outside/temperature");
