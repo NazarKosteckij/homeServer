@@ -9,7 +9,13 @@ include("Sensors.php");
  class OutsideSensorsService implements Sensors
 {
    public function getTemperature(){
-        $json = file_get_contents("http://192.168.1.100/sensors/outside/temperature");
+       $ch = curl_init("http://192.168.1.100/sensors/outside/temperature");
+       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+       curl_setopt($ch, CURLOPT_HEADER, 0);
+       $json = curl_exec($ch);
+       curl_close($ch);
+
+        //$json = file_get_contents("http://192.168.1.100/sensors/outside/temperature");
         $data = json_decode($json);
         $temperature =  $data->data;
         if (is_null($temperature)) {
