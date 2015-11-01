@@ -5,7 +5,8 @@
  * Date: 26.09.2015
  * Time: 10:26
  */
-include("Sensors.php");
+include'ArduinoConnector.php';
+include 'Sensors.php';
  class OutsideSensorsService implements Sensors
  {
      private function doRequestToArduino($url){

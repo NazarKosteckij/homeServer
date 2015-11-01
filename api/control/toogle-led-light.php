@@ -1,6 +1,6 @@
 <?php
 
-use dao\ArduinoConnector;
+include 'ArduinoConnector';
 
 header('Content-Type:application/json');
 $arduinoConnector = new ArduinoConnector();

@@ -8,7 +8,6 @@
 
 header('Content-Type:application/json');
 include '../../../services/InsideSensorsService.php';
-use \sensors\InsideSensorsService;
 
 $inside = new InsideSensorsService();
 $temperature = $inside->getTemperature();

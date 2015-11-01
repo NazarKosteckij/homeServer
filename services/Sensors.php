@@ -6,7 +6,6 @@
  * Time: 10:37
  */
 
-namespace sensors;
 interface Sensors
 {
     function getTemperature();

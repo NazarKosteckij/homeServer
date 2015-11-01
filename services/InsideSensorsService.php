@@ -5,10 +5,9 @@
  * Date: 26.09.2015
  * Time: 10:26
  */
-namespace sensors;
-use dao\ArduinoConnector;
 
-include("Sensors.php");
+include'ArduinoConnector.php';
+include 'Sensors.php';
  class InsideSensorsService implements Sensors
 {
      private function doRequestToArduino($url){
