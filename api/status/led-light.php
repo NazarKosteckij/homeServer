@@ -5,7 +5,7 @@
  * Date: 22.10.2015
  * Time: 23:38
  */
-include("ArduinoConnector.php");
+include("../ArduinoConnector.php");
 
 header('Content-Type:application/json');
 $arduinoConnector = new ArduinoConnector();
