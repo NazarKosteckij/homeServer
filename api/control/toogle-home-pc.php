@@ -1,6 +1,6 @@
 <?php
 
-include 'ArduinoConnector';
+include 'ArduinoConnector.php';
 
 header('Content-Type:application/json');
 $arduinoConnector = new ArduinoConnector();
