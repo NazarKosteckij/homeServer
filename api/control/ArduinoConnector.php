@@ -5,7 +5,6 @@
  * Date: 01.11.2015
  * Time: 1:00
  */
-
 class ArduinoConnector
 {
     public function doRequestToArduino($url){
