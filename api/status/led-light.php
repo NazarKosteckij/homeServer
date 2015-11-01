@@ -5,8 +5,7 @@
  * Date: 22.10.2015
  * Time: 23:38
  */
-include("../../dao/ArduinoConnector.php");
-use dao\ArduinoConnector;
+include("ArduinoConnector.php");
 
 header('Content-Type:application/json');
 $arduinoConnector = new ArduinoConnector();
