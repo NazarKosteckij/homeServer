@@ -60,7 +60,7 @@
                                 </i>
                                 <div class="row">
         		      	  <span id="value">
-				  </span><span id="units">C</span>
+				  </span><span id="units">°C</span>
                                 </div>
                             </div>
                             <div class="humidity flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
@@ -82,7 +82,7 @@
                                 <div class="row">
                 		 <span id="value">
                             
-                        	</span><span id="units">C</span>
+                        	</span><span id="units">°C</span>
                                 </div>
                             </div>
                             <div class="humidity flow-text col s6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="humidity">
@@ -104,17 +104,14 @@
                     <div class="sensors-data row  card-panel center grey lighten-5 z-depth-1 center">
                         <i class="row card-title">Core temperature</i>
 
-                        <div class="flow-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature of server's cpu">
+                        <div class="core-temperature flow-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="temperature of server's cpu">
                             <i id="row">
                                 <img  class="sensors-icon" src="png\thermometer.png">
                             </i>
                             <div class="row">
-          <span id="value"><?php
-              $json3 = file_get_contents("http://localhost/sensors/getCoreTemperature.php");
-              $data3 = json_decode($json3);
-              $coreTemperature =  $data3->temperature;
-              print  $coreTemperature;
-              ?> </span><span id="units">C</span>
+        			 <span id="value">
+          	 		 </span>
+          	 		 <span id="units">°C</span>
                             </div>
                         </div>
                     </div>
