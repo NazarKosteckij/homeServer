@@ -45,6 +45,15 @@ function getSensorsData() {
 
 function checkStatuses() {
     $.ajax({
+        url:"sensors/getCoreTemperature.php",
+        success: function(data){
+            var value = JSON.parse(data).temperature;
+            $(".core-temperature #value").html(value);
+            
+        }
+    });
+    
+    $.ajax({
         url:"api/status/led-light.php",
         success: function(data){
             console.log(data.data);
@@ -53,7 +62,6 @@ function checkStatuses() {
                 $('#led-light-status').prop("checked", true);
             } else {
                 $('#led-light-status').prop("checked", false);
-                alert("error");
             }
         }
     });
@@ -66,7 +74,6 @@ function checkStatuses() {
                 $('#home-pc-status').prop("checked", true);
             } else {
                 $('#home-pc-status').prop("checked", false);
-                alert("error");
             }
         }
     });
@@ -102,7 +109,10 @@ function confirmAction(title, message, url){
     if (message && url) {
             $("#action-url").unbind('click');
             $("#action-url").click(function(){
-            $.ajax(url);
+            $.ajax(url).done(
+                function(){
+                    Materialize.toast("Done",3000);
+                });
             $('#main-modal').closeModal();
         });
         $("#modal-text").html(message)
