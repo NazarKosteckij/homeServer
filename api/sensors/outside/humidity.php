@@ -5,7 +5,15 @@
  * Date: 16.10.2015
  * Time: 19:59
  */
-include "../../../services/OutsideSensorsService.php";
+
+header('Content-Type:application/json');
+include '../../../services/OutsideSensorsService.php';
+
 $outside = new OutsideSensorsService();
-echo $outside->getHumidity();
+$humidity =  $outside->getHumidity();
+
+print "{\"data\": \"";
+print $humidity;
+print "\"}";
+
 ?>

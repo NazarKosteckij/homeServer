@@ -5,7 +5,14 @@
  * Date: 16.10.2015
  * Time: 19:59
  */
-include "../../../services/OutsideSensorsService.php";
+
+header('Content-Type:application/json');
+include '../../../services/OutsideSensorsService.php';
+
 $outside = new OutsideSensorsService();
-echo $outside->getTemperature();
+$temperature = $outside->getTemperature();
+
+print "{\"data\": \"";
+print $temperature;
+print "\"}";
 ?>

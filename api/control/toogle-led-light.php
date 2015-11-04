@@ -1,7 +1,8 @@
 <?php
-$json = file_get_contents("http://192.168.1.100/controll/led");
-header('Content-type: application/json');
-echo $json;
+include 'ArduinoConnector.php';
+header('Content-Type:application/json');
+$arduinoConnector = new ArduinoConnector();
+echo $arduinoConnector->doRequestToArduino("http://192.168.1.100/controll/led");
 /*
 	if($_GET['brightness']){
 		$s = "python write.py " . $_GET['brightness'];

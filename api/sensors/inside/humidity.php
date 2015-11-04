@@ -1,11 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Íàçàð
+ * User: ÃÃ Ã§Ã Ã°
  * Date: 16.10.2015
  * Time: 19:59
  */
-include "../../../services/InsideSensorsService.php";
-$outside = new InsideSensorsService();
-echo $outside->getHumidity();
+
+header('Content-Type:application/json');
+include '../../../services/InsideSensorsService.php';
+
+$inside = new InsideSensorsService();
+
+print "{\"data\": \"";
+print $inside->getHumidity();
+print "\"}";
 ?>

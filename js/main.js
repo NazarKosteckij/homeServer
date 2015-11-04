@@ -1,14 +1,101 @@
 /**
- * Created by Назар on 24.10.2015.
+ * Created by Nazar on 24.10.2015.
  */
 $(document).ready(function(){
+    getSensorsData();
     $('.parallax').parallax();
     $('.slider').slider({full_width: true});
-
+    checkStatuses();
     $('#home-pc-status').change(function(){
         clickHomePcToogle();
     });
 });
+
+/** 
+ * Gets the data via api
+ */ 
+function getSensorsData() {
+    //outside
+     $.ajax("api/sensors/outside/temperature.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .outside .temperature #value').html(data.data);
+        }
+    });
+    
+     $.ajax("api/sensors/outside/humidity.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .outside .humidity #value').html(data.data);
+        }
+    });
+    
+    //inside
+     $.ajax("api/sensors/inside/temperature.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .inside .temperature #value').html(data.data);
+        }
+    });
+    
+     $.ajax("api/sensors/inside/humidity.php").done(function(data) {
+        if ( data ) {
+            $('.sensors-data .inside .humidity #value').html(data.data);
+        }
+    });
+    
+}
+
+function checkStatuses() {
+    $.ajax({
+        url:"sensors/getCoreTemperature.php",
+        success: function(data){
+            var value = JSON.parse(data).temperature;
+            $(".core-temperature #value").html(value);
+            
+        }
+    });
+    
+    $.ajax({
+        url:"api/status/led-light.php",
+        success: function(data){
+            console.log(data.data);
+            if ( data.data === 'true' ) {
+
+                $('#led-light-status').prop("checked", true);
+            } else {
+                $('#led-light-status').prop("checked", false);
+            }
+        }
+    });
+
+    $.ajax({
+        url:"api/status/home-pc.php",
+        success: function(data){
+            if ( data.data === 'true' ) {
+                console.log(data.data);
+                $('#home-pc-status').prop("checked", true);
+            } else {
+                $('#home-pc-status').prop("checked", false);
+            }
+        }
+    });
+
+    $.ajax({
+        url:"api/status/server.php",
+        success: function(data){
+            if (  data.data === 'true' ) {
+                console.log(data.data);
+                $('#server-status').prop("checked", true);
+            } else {
+                $('#server-status').prop("checked", false);
+            }
+        }
+    }).done(function(){
+        removePreloader();
+    });
+}
+//TODO implement it
+function removePreloader(){
+
+}
 
 function requestLed(){
     clickLedLightToogle();
@@ -22,7 +109,10 @@ function confirmAction(title, message, url){
     if (message && url) {
             $("#action-url").unbind('click');
             $("#action-url").click(function(){
-            $.ajax(url);
+            $.ajax(url).done(
+                function(){
+                    Materialize.toast("Done",3000);
+                });
             $('#main-modal').closeModal();
         });
         $("#modal-text").html(message)
