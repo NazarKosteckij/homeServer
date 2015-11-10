@@ -62,6 +62,14 @@ var SensorsModel = {
 
 $(document).ready(function($) {
   SensorsModel.init();
+  $(function() {
+    doUpdate();
+
+    function doUpdate() {
+       setTimeout(doUpdate,3*60000);
+       SensorsController.update();
+    }
+});
 });
     
   
