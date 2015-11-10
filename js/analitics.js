@@ -53,7 +53,7 @@ var SensorsModel = {
       
        $.ajax("api/sensors/inside/humidity.php").done(function(data) {
           if ( data ) {
-               SensorsModel.setValueOutsideHumidity(data.data);
+               SensorsModel.setValueInsideHumidity(data.data);
           }
       });
       
