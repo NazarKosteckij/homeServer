@@ -1,8 +1,14 @@
 <?php
-$condition = false;
+/**
+* run this script in cron every 1-5 minutest
+*/
 
-require("../services/InsideSensorsService.php");
-require("../services/OutsideSensorsService.php");
+$condition = false;
+require_once('../services/NotificationService.php');
+require_once("../services/InsideSensorsService.php");
+require_once("../services/OutsideSensorsService.php");
+
+$notifications = new NotificationService();
 
 $inside = new InsideSensorsService();
 $insideT =  $inside->getTemperature();
@@ -26,6 +32,7 @@ if($insideH === '0'){
 
 if($condition)
 {
+	$notifications->sendNotification();
 	shell_exec('python rebootArduino.py');
 
 } else echo 'ok';
