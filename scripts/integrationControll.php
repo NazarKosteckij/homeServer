@@ -4,9 +4,9 @@
 */
 
 $condition = false;
-require_once('../services/NotificationService.php');
-require_once("../services/InsideSensorsService.php");
-require_once("../services/OutsideSensorsService.php");
+require('../services/NotificationService.php');
+require_once('../services/InsideSensorsService.php');
+require_once('../services/OutsideSensorsService.php');
 
 $notifications = new NotificationService();
 
@@ -28,13 +28,21 @@ if(($insideT === 'NaN') && ($outsideH === 'NaN')){
 
 if($insideH === '0'){
 	//send notification
+	 $notifications->sendNotification('Inside_sensor_is_unconnected');
 }
+
+if($outsideH === '0'){
+        //send notification
+         $notifications->sendNotification('Outside_sensor_is_unconnected');
+}
+
 
 if($condition)
 {
-	$notifications->sendNotification();
-	shell_exec('python rebootArduino.py');
 
-} else echo 'ok';
+	$message = '';
+	$date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
+	$notifications->sendNotification('Hard_resert_of_arduino');
+}
 
 ?>
