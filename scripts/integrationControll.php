@@ -26,23 +26,50 @@ if(($insideT === 'NaN') && ($outsideH === 'NaN')){
 	$condition = true;
 }
 
-if($insideH === '0'){
-	//send notification
-	 $notifications->sendNotification('Inside_sensor_is_unconnected');
+if(($insideH === '0') && !file_exists("arduino.connection.inside.lock")){
+        //send notification
+	$notifications->sendNotification('Inside_sensor_is_unconnected');
+	$lock = fopen("arduino.connection.lock", "w") ;
+	$date = date("Y-m-d H:i:s");
+	fwrite($lock, "arduino locked at $date becouse inside sensors isn\'t connected");
+	fclose($lock);	
+	
+} else {
+	if(file_exists("arduino.connection.inside.lock")){
+		unlink('arduino.connection.inside.lock');	
+	}
 }
 
-if($outsideH === '0'){
+if(($outsideH === '0') && !file_exists("arduino.connection.outside.lock")){
         //send notification
-         $notifications->sendNotification('Outside_sensor_is_unconnected');
+	$notifications->sendNotification('Outside_sensor_is_unconnected');
+	$lock = fopen("arduino.connection.lock", "w") ;
+	$date = date("Y-m-d H:i:s");
+	fwrite($lock, "arduino locked at $date becouse outside sensors isn\'t connected");
+	fclose($lock);	
+} else {
+	if(file_exists("arduino.connection.outside.lock")){
+		unlink('arduino.connection.outside.lock');	
+	}
 }
 
 
 if($condition)
 {
-
-	$message = '';
-	$date = date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
-	$notifications->sendNotification('Hard_resert_of_arduino');
+	if(!file_exists("arduino.lock")){
+		$notifications->sendNotification('Hard_resert_of_arduino');
+		$lock = fopen("arduino.lock", "w") ;
+		$date = date("Y-m-d H:i:s");
+		fwrite($lock, 'arduino locked at ');
+		fwrite($lock, $date);
+		fclose($lock);	
+	}
+	shell_exec('python rebootArduino.py');
+	
+} else {
+	if(!file_exists("arduino.lock")){
+		unlink('arduino.lock');
+	 	$notifications->sendNotification('Arduino_is_alive');
+	}
 }
-
 ?>
