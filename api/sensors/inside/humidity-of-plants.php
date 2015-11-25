@@ -6,7 +6,6 @@ header('Content-Type:application/json');
         if (is_null($humidity)) {
             $humidity = "NaN";
         }
-        return $temperature;
 print "{\"data\": \"";
 print $humidity;
 print "\"}";
