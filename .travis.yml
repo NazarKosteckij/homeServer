@@ -6,7 +6,6 @@ php:
   - hhvm
   - nightly
 
-befoer_script:
-	- curl -sS https://getcomposer.org/installer | php
-	- php compouser.phar install
+before_script:
+  -  composer install
 script: phpunit
