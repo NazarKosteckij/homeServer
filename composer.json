@@ -1,0 +1,9 @@
+{
+    "required": {
+        "php":">=5.3.0"
+    }, 
+
+    "required-dev":{
+    	"phpunit/phpunit":"3.7.x-dev"
+    }
+}
