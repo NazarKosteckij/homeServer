@@ -6,6 +6,6 @@ php:
   - hhvm
   - nightly
 
-befoer_script:
+before_script:
   -  composer install
 script: phpunit
