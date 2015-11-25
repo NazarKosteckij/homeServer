@@ -7,6 +7,5 @@ php:
   - nightly
 
 befoer_script:
-  - curl -sS https://getcomposer.org/installer | php
-  - php compouser.phar install
+  -  composer install
 script: phpunit
