@@ -43,12 +43,12 @@ if(($insideH === '0') && !file_exists("arduino.connection.inside.lock")){
 if(($outsideH === '0') && !file_exists("arduino.connection.outside.lock")){
         //send notification
 	$notifications->sendNotification('Outside_sensor_is_unconnected');
-	$lock = fopen("arduino.connection.lock", "w") ;
+	$lock = fopen("arduino.connection.outside.lock", "w") ;
 	$date = date("Y-m-d H:i:s");
 	fwrite($lock, "arduino locked at $date becouse outside sensors isn\'t connected");
 	fclose($lock);	
 } else {
-	if(file_exists("arduino.connection.outside.lock")){
+	if(($outsideH !== '0') && file_exists("arduino.connection.outside.lock")){
 		unlink('arduino.connection.outside.lock');	
 	}
 }
@@ -67,7 +67,7 @@ if($condition)
 	shell_exec('python rebootArduino.py');
 	
 } else {
-	if(!file_exists("arduino.lock")){
+	if(file_exists("arduino.lock")){
 		unlink('arduino.lock');
 	 	$notifications->sendNotification('Arduino_is_alive');
 	}
