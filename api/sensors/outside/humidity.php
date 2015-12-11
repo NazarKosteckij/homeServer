@@ -12,8 +12,6 @@ include '../../../services/OutsideSensorsService.php';
 $outside = new OutsideSensorsService();
 $humidity =  $outside->getHumidity();
 
-print "{\"data\": \"";
-print $humidity;
-print "\"}";
+print "{\"data\": \"$humidity\"}";
 
 ?>

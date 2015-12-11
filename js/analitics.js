@@ -3,19 +3,40 @@
 var SensorsModel = {
   insideHumidity:  null,
   outsideHumidity: null,
+  insideTemperature:  null,
+  outsideTemperature: null,
   //init
   init: function(){ 
     this.insideHumidity = loadLiquidFillGauge("inside-humidity", 0);
     this.outsideHumidity = loadLiquidFillGauge("outside-humidity", 0);
-    var config1 = liquidFillGaugeDefaultSettings();
-    config1.circleColor = "#FF7777";
-    config1.textColor = "#FF4444";
-    config1.waveTextColor = "#FFAAAA";
-    config1.waveColor = "#FFDDDD";
-    config1.circleThickness = 0.2;
-    config1.textVertPosition = 0.2;
-    config1.waveAnimateTime = 1000;
+ 
+    var temperatureConfig = liquidFillGaugeDefaultSettings();
+    temperatureConfig.circleColor = "#FF6666";
+    temperatureConfig.textColor = "#FF4555";
+    temperatureConfig.waveTextColor = "#FFAAAA";
+    temperatureConfig.waveColor = "#FFEEEE";
+
+    temperatureConfig.displayPercent = false;
+    temperatureConfig.units = "°C";
+    temperatureConfig.minValue = -20;
+     temperatureConfig.maxValue = 40;
+    this.insideTemperature = loadLiquidFillGauge("inside-Temperature", 0, temperatureConfig);
+    this.outsideTemperature = loadLiquidFillGauge("outside-Temperature", 0, temperatureConfig);
+   
   },
+
+  setValueInsideTemperature: function (value) {
+    if (value){
+      this.insideTemperature.update(value);
+    }
+  },
+
+  setValueOutsideTemperature: function (value) {
+    if (value){
+      this.outsideTemperature.update(value);
+    }
+  },
+
   setValueInsideHumidity: function (value) {
     if (value){
       this.insideHumidity.update(value);
@@ -34,7 +55,7 @@ var SensorsModel = {
       //outside
        $.ajax("api/sensors/outside/temperature.php").done(function(data) {
           if ( data ) {
-            //SensorsModel.setValueOutsideHumidity(data.data);
+            SensorsModel.setValueOutsideTemperature(data.data);
           }
       });
       
@@ -46,8 +67,8 @@ var SensorsModel = {
       
       //inside
        $.ajax("api/sensors/inside/temperature.php").done(function(data) {
-          if ( data ) {
-              $('.sensors-data .inside .temperature #value').html(data.data);
+          if ( data ) { 
+            SensorsModel.setValueInsideTemperature(data.data);
           }
       });
       
