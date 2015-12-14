@@ -28,9 +28,9 @@ $query = "INSERT INTO OUTSIDE_SENSORS VALUES(0, '$temperature', '$humidity', '$d
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
+
 if (mysqli_query($conn, $query)) {
-    echo "Data inserted successfully";
+// echo "Data inserted successfully";
 } else {
     echo "Error creating database: " . mysqli_error($conn);
 }
