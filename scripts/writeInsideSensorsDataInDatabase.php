@@ -4,9 +4,6 @@
     $json = file_get_contents("http://192.168.1.100/sensors/temperature");
   $data = json_decode($json);
   $temperature =  $data->data;
-  echo $temperature;
-  echo "C \n";
-
   $json2 = file_get_contents("http://192.168.1.100/sensors/humidity");
 
     $data2 = json_decode($json2);
@@ -29,7 +26,7 @@ if (!$conn) {
 if (mysqli_query($conn, $query)) {
 //  echo "Data inserted successfully";
 } else {
-    echo "Error creating database: " . mysqli_error($conn);
+    echo "Error in query : " . mysqli_error($conn);
 }
 
 ?>
