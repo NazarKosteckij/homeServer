@@ -26,6 +26,7 @@ if(($insideT === 'NaN') && ($outsideH === 'NaN')){
 	$condition = true;
 }
 
+//when sensors dont connected and not locked 
 if(($insideH === '0') && !file_exists("arduino.connection.inside.lock")){
         //send notification
 	$notifications->sendNotification('Inside_sensor_is_unconnected');
@@ -35,8 +36,9 @@ if(($insideH === '0') && !file_exists("arduino.connection.inside.lock")){
 	fclose($lock);	
 	
 } else {
-	if(file_exists("arduino.connection.inside.lock")){
+	if($inside !== '0' && file_exists("arduino.connection.inside.lock")){
 		unlink('arduino.connection.inside.lock');	
+		
 	}
 }
 
