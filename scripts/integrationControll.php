@@ -30,7 +30,7 @@ if(($insideT === 'NaN') && ($outsideH === 'NaN')){
 if(($insideH === '0') && !file_exists("arduino.connection.inside.lock")){
         //send notification
 	$notifications->sendNotification('Inside_sensor_is_unconnected');
-	$lock = fopen("arduino.connection.lock", "w") ;
+	$lock = fopen("arduino.connection.inside.lock", "w") ;
 	$date = date("Y-m-d H:i:s");
 	fwrite($lock, "arduino locked at $date becouse inside sensors isn\'t connected");
 	fclose($lock);	
