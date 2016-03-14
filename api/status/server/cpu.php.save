@@ -1,0 +1,8 @@
+<?php
+shell_exec("python //var/www/html/scripts/coreUsage.py > /var/www/html/scripts/usege &");
+$dapython //var/www/html/scripts/coreUsage.py > /var/www/html/scripts/usta = file_get_contents("/var/www/html/scripts/usege");
+sleep (1);
+$data = $data - 0;
+$name = "usage";
+print("{\"$name\":\"$data\"}");
+?>
