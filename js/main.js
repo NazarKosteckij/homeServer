@@ -16,7 +16,7 @@ $(document).ready(function(){
  */ 
 function getSensorsData() {
     //outside
-     $.ajax("api/sensors/outside/temperature.php").done(function(data) {
+    $.ajax("api/sensors/outside/temperature.php").done(function(data) {
         if ( data ) {
             $('.sensors-data .outside .temperature #value').html(data.data);
         }
@@ -43,8 +43,8 @@ function getSensorsData() {
     
 }
 
-function checkStatuses() {
-    $.ajax({
+function checkCoreTemperature() {
+   $.ajax({
         url:"sensors/getCoreTemperature.php",
         success: function(data){
             var value = JSON.parse(data).temperature;
@@ -52,7 +52,12 @@ function checkStatuses() {
             
         }
     });
-    
+}
+
+window.setInterval( checkCoreTemperature, 2000);
+
+function checkStatuses() {
+    checkCoreTemperature();
     $.ajax({
         url:"api/status/led-light.php",
         success: function(data){
